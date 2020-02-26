@@ -25,7 +25,25 @@ attr_accessor :till
     end
   end
 
+  def sell_drink(customer, drink)
+    if check_age(customer) == true && check_not_drunk(customer) == true
+      customer.buy_drink(drink)
+      @till += drink.price
+    else
+      return "get out of my pub"
+    end
 
+  end
+
+  #if
+    #customer check age is true
+    #customer not drunk is true
+  #then
+    #customer buys a drink
+    #till increases
+  #else
+    #pub tells customer "get out of my pub"
+  #end
 
 end
 
