@@ -9,8 +9,8 @@ require_relative("../pub")
 class TestDrink < MiniTest::Test
 
   def setup
-    @drink1 = Drink.new("Cosmopolitan", 7)
-    @drink2 = Drink.new("Gin and Tonic", 5)
+    @drink1 = Drink.new("Cosmopolitan", 7, 2)
+    @drink2 = Drink.new("Gin and Tonic", 5, 1)
   end
 
   def test_get_name
