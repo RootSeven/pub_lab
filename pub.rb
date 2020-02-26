@@ -1,3 +1,5 @@
+require ('pry-byebug')
+
 class Pub
 
 attr_reader :name, :drinks
@@ -26,11 +28,12 @@ attr_accessor :till
   end
 
   def sell_drink(customer, drink)
+    # binding.pry
     if check_age(customer) == true && check_not_drunk(customer) == true
       customer.buy_drink(drink)
       @till += drink.price
     else
-      return "get out of my pub"
+      return puts "GET OUT OF MY PUB"
     end
 
   end

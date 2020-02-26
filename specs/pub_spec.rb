@@ -48,9 +48,16 @@ class TestPub < MiniTest::Test
     assert_equal(307, @pub1.till)
   end
 
-  def test_sell_drink_underage
+  def test_dont_sell_drink_underage
     @pub1.sell_drink(@customer3, @drink1)
     assert_equal(300, @pub1.till)
+  end
+
+  def test_dont_sell_drink_drunk
+    @pub1.sell_drink(@customer4, @drink3)
+    @pub1.sell_drink(@customer4, @drink3)
+    assert_equal(10, @customer4.units_consumed)
+    assert_equal(315, @pub1.till)
   end
 
 end
