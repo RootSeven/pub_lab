@@ -28,7 +28,6 @@ attr_accessor :till
   end
 
   def sell_drink(customer, drink)
-    # binding.pry
     if check_age(customer) == true && check_not_drunk(customer) == true
       customer.buy_drink(drink)
       @till += drink.price
@@ -38,28 +37,4 @@ attr_accessor :till
 
   end
 
-  #if
-    #customer check age is true
-    #customer not drunk is true
-  #then
-    #customer buys a drink
-    #till increases
-  #else
-    #pub tells customer "get out of my pub"
-  #end
-
 end
-
-
-
-=begin
-
-pub sells drink(customer, drink)
-  if pub checks age and pub checks not drunk are both true
-    then customer buys drink
-    pub till increases by drink price
-  else
-    don't sell drink
-  end
-
-=end

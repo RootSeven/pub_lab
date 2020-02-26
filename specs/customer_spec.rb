@@ -13,6 +13,7 @@ class TestCustomer < MiniTest::Test
     @customer1 = Customer.new("Mhairi", 20, 22)
     @customer2 = Customer.new("Ariana", 30, 33)
     @drink1 = Drink.new("Pina Colada", 10, 1)
+    @drink3 = Drink.new("Nuclear Penguin", 15, 10)
     @pub1 = Pub.new("The Greyhound", 300, [@drink1, @drink2])
     @food1 = Food.new("chips, cheese and mayo", 4, 5)
   end
@@ -43,6 +44,12 @@ class TestCustomer < MiniTest::Test
     @customer1.buy_drink(@drink1)
     @customer1.buy_food(@food1)
     assert_equal(0, @customer1.units_consumed)
+  end
+
+  def test_buy_food_partially_rejuvenated
+    @customer1.buy_drink(@drink3)
+    @customer1.buy_food(@food1)
+    assert_equal(5, @customer1.units_consumed)
   end
 
 end
