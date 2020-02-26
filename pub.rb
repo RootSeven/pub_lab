@@ -7,4 +7,7 @@ attr_reader :name, :till, :drinks
     @till = till
     @drinks = drinks
   end
+
+  
+
 end

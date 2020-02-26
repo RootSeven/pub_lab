@@ -3,11 +3,14 @@ require('minitest/reporters')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative("../pub")
+require_relative("../drink")
+require_relative("../customer")
 
 class TestPub < MiniTest::Test
   def setup
     @pub1 = Pub.new("The Greyhound", 300, [@drink1, @drink2])
-    @drink1 = Drink.new("Cosmopolitan", 6)
+    @drink1 = Drink.new("Cosmopolitan", 7)
+    @drink2 = Drink.new("Gin and Tonic", 5)
   end
 
   def test_pub_name
@@ -18,8 +21,8 @@ class TestPub < MiniTest::Test
     assert_equal(300, @pub1.till)
   end
 
-  # def test_get_drinks
-  #
-  # end
+  def test_count_drinks
+    assert_equal(2, @pub1.drinks.count)
+  end
 
 end
