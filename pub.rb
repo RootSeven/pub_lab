@@ -1,6 +1,7 @@
 class Pub
 
-attr_reader :name, :till, :drinks
+attr_reader :name, :drinks
+attr_accessor :till
 
   def initialize(name, till, drinks)
     @name = name
@@ -8,6 +9,6 @@ attr_reader :name, :till, :drinks
     @drinks = drinks
   end
 
-  
+
 
 end
